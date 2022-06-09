@@ -1,9 +1,14 @@
 from py_librus_api import Librus
+import os
 
 librus = Librus()
 
-# Login i hasło do librusa synergii
-librus.login("LOGIN", "HASŁO")
+login = input("Podaj login do konta librus synergia: ")
+hasło = input("Podaj hasło do konta librus synergia: ")
+
+librus.login(login, hasło)
+
+os.system('cls' if os.name=='nt' else 'clear')
 
 
 class Lekcja:
@@ -58,3 +63,5 @@ if librus.logged_in:
         lekcja.get()
 else:
     print("Błędny login lub hasło")
+    
+input("\n\nNaciśnij cokolwiek aby wyjść...")
