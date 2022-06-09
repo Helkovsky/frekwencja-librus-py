@@ -56,3 +56,5 @@ if librus.logged_in:
 
     for lekcja in frekwencja:
         lekcja.get()
+else:
+    print("Błędny login lub hasło")
